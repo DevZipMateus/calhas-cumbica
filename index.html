@@ -36,9 +36,12 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css?v=1.0">
+  <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 <body>
+
+  <!-- Barra de progresso de scroll -->
+  <div id="scroll-progress"></div>
 
   <!-- HEADER -->
   <header id="header">
@@ -77,6 +80,7 @@
 
   <!-- HERO -->
   <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-badge">Mais de 20 anos de experiência</span>
@@ -92,22 +96,22 @@
     </div>
     <div class="hero-bottom-bar">
       <div class="stat-item">
-        <span class="stat-num">+20</span>
+        <span class="stat-num" data-count="20" data-prefix="+">+20</span>
         <span class="stat-label">Anos no mercado</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-num">+500</span>
+        <span class="stat-num" data-count="500" data-prefix="+">+500</span>
         <span class="stat-label">Projetos realizados</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-num">3</span>
+        <span class="stat-num" data-count="3">3</span>
         <span class="stat-label">Segmentos atendidos</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-num">100%</span>
+        <span class="stat-num" data-count="100" data-suffix="%">100%</span>
         <span class="stat-label">Comprometimento</span>
       </div>
     </div>
@@ -436,6 +440,6 @@
   <div id="montesite-footer-badge"></div>
   <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
 
-  <script src="script.js?v=1.0"></script>
+  <script src="script.js?v=1.1"></script>
 </body>
 </html>

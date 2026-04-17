@@ -804,6 +804,192 @@ button { cursor: pointer; font-family: inherit; }
 [data-reveal].visible { opacity: 1; transform: translateY(0); }
 
 /* ===========================
+   SCROLL PROGRESS BAR
+   =========================== */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--red);
+  z-index: 2001;
+  box-shadow: 0 0 10px rgba(204,27,32,.7);
+  transition: width .08s linear;
+}
+
+/* ===========================
+   HERO CANVAS
+   =========================== */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===========================
+   HERO ENTRANCE ANIMATIONS
+   =========================== */
+.hero-badge {
+  position: relative;
+  animation: fadeInDown .7s ease both;
+  animation-delay: .2s;
+  opacity: 0;
+}
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  background: var(--red);
+  opacity: .3;
+  animation: badgePulse 2.8s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); opacity: .3; }
+  50% { transform: scale(1.2); opacity: 0; }
+}
+.hero-content h1 { animation: fadeInUp .8s ease both; animation-delay: .4s; opacity: 0; }
+.hero-content h2 { animation: fadeInUp .8s ease both; animation-delay: .6s; opacity: 0; }
+.hero-content p  { animation: fadeInUp .8s ease both; animation-delay: .75s; opacity: 0; }
+.hero-btns       { animation: fadeInUp .8s ease both; animation-delay: .9s; opacity: 0; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   RIPPLE EM BOTÕES
+   =========================== */
+.btn-primary,
+.btn-outline,
+.btn-form,
+.btn-header,
+.btn-nav-wpp { position: relative; overflow: hidden; }
+
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.28);
+  transform: scale(0);
+  animation: rippleAnim .55s linear;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to { transform: scale(4.5); opacity: 0; }
+}
+
+/* ===========================
+   CARD SHINE SWEEP
+   =========================== */
+.servico-card,
+.mercado-card,
+.mvv-card { position: relative; overflow: hidden; }
+
+.servico-card::after,
+.mercado-card::after,
+.mvv-card::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -70%;
+  width: 45%;
+  height: 220%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.06), transparent);
+  transform: skewX(-18deg);
+  transition: left .55s ease;
+  pointer-events: none;
+}
+.servico-card:hover::after,
+.mercado-card:hover::after,
+.mvv-card:hover::after { left: 130%; }
+
+/* ===========================
+   ÍCONES — GLOW HOVER
+   =========================== */
+.servico-icon,
+.mvv-icon,
+.mercado-icon {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.servico-card:hover .servico-icon {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 0 22px rgba(204,27,32,.55);
+}
+.mvv-card:hover .mvv-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(204,27,32,.45);
+}
+.mercado-card:hover .mercado-icon {
+  transform: scale(1.1) rotate(6deg);
+}
+
+/* ===========================
+   NAV ACTIVE
+   =========================== */
+.nav-desktop a.active {
+  color: var(--white) !important;
+  background: var(--red) !important;
+}
+
+/* ===========================
+   MENU TOGGLE → X
+   =========================== */
+.menu-toggle span { transition: transform .3s ease, opacity .3s ease; }
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===========================
+   DIFERENCIAL HOVER
+   =========================== */
+.diferencial-item {
+  padding: 24px;
+  border-radius: 12px;
+  transition: opacity .5s ease, transform .5s ease, background var(--transition);
+}
+.diferencial-item:hover { background: rgba(204,27,32,.06); }
+.diferencial-item > i { transition: transform var(--transition); }
+.diferencial-item:hover > i { transform: scale(1.15) rotate(-5deg); }
+
+/* ===========================
+   MERCADO DESTAQUE GLOW LOOP
+   =========================== */
+.mercado-card.destaque.visible {
+  animation: mercadoGlow 3.5s ease-in-out infinite;
+}
+@keyframes mercadoGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(204,27,32,0); }
+  50%       { box-shadow: 0 0 0 5px rgba(204,27,32,.18), 0 12px 40px rgba(204,27,32,.2); }
+}
+
+/* ===========================
+   FORM FOCUS GLOW
+   =========================== */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(204,27,32,.18);
+}
+
+/* ===========================
+   STAT COUNTER POP
+   =========================== */
+.stat-num.popped { animation: statPop .25s ease; }
+@keyframes statPop {
+  0%   { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* ===========================
    RESPONSIVE — 4K → 320px
    =========================== */
 
