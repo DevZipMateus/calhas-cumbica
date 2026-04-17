@@ -202,8 +202,8 @@ button { cursor: pointer; font-family: inherit; }
   flex-direction: column;
   justify-content: center;
   background:
-    linear-gradient(rgba(10,10,10,.82), rgba(10,10,10,.82)),
-    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center / cover no-repeat;
+    linear-gradient(rgba(10,10,10,.78), rgba(10,10,10,.78)),
+    url('images/12739ce8-2ea8-4b69-a502-52a13b265570.jpeg') center / cover no-repeat;
   background-attachment: fixed, fixed;
 }
 @media (max-width: 1023px) {
@@ -987,6 +987,40 @@ button { cursor: pointer; font-family: inherit; }
 @keyframes statPop {
   0%   { transform: scale(1.4); }
   100% { transform: scale(1); }
+}
+
+/* ===========================
+   BACKGROUNDS — IMAGENS REAIS
+   =========================== */
+
+/* Serviços — dutos industriais dark */
+#servicos {
+  background:
+    linear-gradient(rgba(17,17,17,.90), rgba(17,17,17,.90)),
+    url('images/96c55b8b-1a3b-4a53-a175-d49d75e86eca.jpeg') center / cover no-repeat;
+  background-attachment: fixed, fixed;
+}
+
+/* Mercados — instalação de calha */
+#mercados {
+  background:
+    linear-gradient(rgba(17,17,17,.87), rgba(17,17,17,.87)),
+    url('images/c501b8a4-8724-4edb-8833-551677f6b989.jpeg') center / cover no-repeat;
+  background-attachment: fixed, fixed;
+}
+
+/* Diferenciais — calha residencial close-up */
+#diferenciais {
+  background:
+    linear-gradient(rgba(240,240,240,.88), rgba(240,240,240,.88)),
+    url('images/6625e18b-b45c-4161-b26c-4483cd1bbcb1.jpeg') center / cover no-repeat;
+  background-attachment: fixed, fixed;
+}
+
+@media (max-width: 1023px) {
+  #servicos,
+  #mercados,
+  #diferenciais { background-attachment: scroll, scroll; }
 }
 
 /* ===========================
