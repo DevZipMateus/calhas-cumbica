@@ -257,6 +257,23 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 }
 
 // ===========================
+// FAQ ACCORDION
+// ===========================
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-question').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.nextElementSibling.classList.add('open');
+    }
+  });
+});
+
+// ===========================
 // MÁSCARA DE TELEFONE
 // ===========================
 const telInput = document.getElementById('telefone');
