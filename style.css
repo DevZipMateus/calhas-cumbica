@@ -1213,6 +1213,13 @@ button { cursor: pointer; font-family: inherit; }
   .footer-grid { grid-template-columns: 1.5fr 1fr 1.5fr 1.5fr; }
 }
 
+/* Laptop médio — nav com 6 links fica apertada */
+@media (max-width: 1200px) {
+  .nav-desktop { gap: 2px; }
+  .nav-desktop a { padding: 7px 10px; font-size: .82rem; }
+  .btn-header    { padding: 9px 14px; font-size: .82rem; }
+}
+
 /* Laptop / Desktop médio */
 @media (max-width: 1280px) {
   .servicos-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1230,7 +1237,13 @@ button { cursor: pointer; font-family: inherit; }
   .mvv-grid { grid-template-columns: 1fr 1fr; }
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
   .mercados-grid { grid-template-columns: repeat(2, 1fr); }
-  .depo-grid { grid-template-columns: 1fr 1fr; }
+  .depo-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+
+  .faq-list { max-width: 100%; }
+  .faq-question { font-size: .9rem; padding: 18px 20px; }
+  .faq-answer p  { padding: 0 20px 18px; padding-top: 14px; }
+
+  .marquee-track span { font-size: .73rem; padding: 0 14px; }
 
   .contato-grid { grid-template-columns: 1fr; gap: 36px; }
 
@@ -1255,6 +1268,17 @@ button { cursor: pointer; font-family: inherit; }
 
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .diferencial-item { padding: 20px; }
+
+  /* Depoimentos — 1 coluna a partir de 768px */
+  .depo-grid { grid-template-columns: 1fr; }
+  .depo-card { padding: 28px 22px; }
+
+  /* FAQ */
+  .faq-answer { max-height: 0; }
+  .faq-answer.open { max-height: 320px; }
+
+  /* Marquee */
+  .marquee-track span { font-size: .7rem; padding: 0 12px; }
 
   .contato-grid { gap: 28px; }
   .contato-form-wrap { padding: 28px 20px; }
@@ -1289,6 +1313,19 @@ button { cursor: pointer; font-family: inherit; }
 
   .diferenciais-grid { grid-template-columns: 1fr; gap: 12px; }
   .diferencial-item  { padding: 16px; }
+
+  /* Depoimentos */
+  .depo-card   { padding: 24px 18px; }
+  .depo-card::before { font-size: 3.5rem; top: 8px; right: 14px; }
+
+  /* FAQ */
+  .faq-question { font-size: .88rem; padding: 16px 18px; }
+  .faq-answer p { padding: 0 18px 16px; padding-top: 12px; }
+  .faq-answer.open { max-height: 350px; }
+
+  /* Marquee */
+  .marquee-track span { font-size: .68rem; padding: 0 10px; }
+  .marquee-wrap { padding: 12px 0; }
 
   .contato-form-wrap { padding: 24px 16px; }
   .contato-form { gap: 16px; }
@@ -1333,6 +1370,14 @@ button { cursor: pointer; font-family: inherit; }
   .mvv-card         { padding: 24px 16px; }
   .servico-card     { padding: 24px 18px; }
   .diferencial-item { padding: 14px 12px; }
+
+  .depo-card   { padding: 20px 14px; gap: 12px; }
+  .depo-stars  { font-size: .8rem; }
+  .depo-card > p { font-size: .87rem; }
+  .depo-author strong { font-size: .85rem; }
+
+  .faq-question { font-size: .84rem; padding: 14px 16px; gap: 12px; }
+  .faq-answer p { padding: 0 16px 14px; padding-top: 10px; font-size: .84rem; }
 
   .contato-form-wrap { padding: 20px 14px; }
 }
